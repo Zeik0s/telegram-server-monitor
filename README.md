@@ -31,7 +31,7 @@ sudo apt install python3-psutil python3-requests python3-netifaces
 su telegram
 cd ~
 
-git clone https://github.com/syxolk/telegram-server-monitor.git
+git clone https://github.com/Zeik0s/telegram-server-monitor.git
 cd telegram-server-monitor
 cp config.template.py config.py
 
@@ -45,5 +45,5 @@ Start the program with
 python3 daemon.py
 ```
 
-To keep your new telegram bot running when you logout you might want to checkout [tmux](https://tmux.github.io/), which is probably shipped with your favorite distribution.
+To keep your new telegram bot running when you logout you might want to create a Systemd Service. I added an Example (telegram.service). Copy this file to /etc/systemd/system/ .
 
