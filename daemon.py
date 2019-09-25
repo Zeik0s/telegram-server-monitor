@@ -33,7 +33,11 @@ while True:
                 if update_id > last_update_id:
                     last_update_id = update_id
 
-                methods.processMessage(update["message"])
+                try:
+                    methods.processMessage(update["message"])
+                except:
+                    methods.processMessage(update["edited_message"])
+ # in Case a Message was edited, otherwise no Message can be processed
             server_retry = config.SERVER_RETRY_TIMEOUT
         else:
         # TODO error handling
