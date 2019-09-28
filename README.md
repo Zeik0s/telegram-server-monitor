@@ -35,15 +35,24 @@ git clone https://github.com/Zeik0s/telegram-server-monitor.git
 cd telegram-server-monitor
 cp config.template.py config.py
 
-# Edit the config file with your favorite editor
+# Edit the config file with your favorite editor (add password, etc...)
 vim config.py
 ```
 
 ## Usage
-Start the program with
+
+To keep your new telegram bot running when you logout you might want to create a Systemd Service. I added an Example (telegram.service). Copy this file to /etc/systemd/system/ .
+
+You can start the program for testing with
 ```
 python3 daemon.py
 ```
 
-To keep your new telegram bot running when you logout you might want to create a Systemd Service. I added an Example (telegram.service). Copy this file to /etc/systemd/system/ .
+If you plan to leave it running in the Background, do the following:
+```
+sudo cp telegram-monitoring.service /etc/systemd/system/
+sudo systemctl daemon-reload
+sudo systemctl enable telegram-monitoring
+sudo systemctl start telegram-monitoring
 
+```
