@@ -1,0 +1,15 @@
+[Unit]
+Description=Telegram_Monitoring
+Documentation=https://github.com/zeik0s/telegram-server-monitor
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/telegram-server-monitor/
+ExecStart=/usr/bin/python3 daemon.py
+RestartSec=30
+Restart=always
+User=telegram
+Group=telegram
+
+[Install]
+WantedBy=multi-user.target
