@@ -1,6 +1,6 @@
 # Telegram Server Monitor
 
-Monitoring service writen in Python3 to be hosted on your own server.
+Monitoring service written in Python3 to be hosted on your own server.
 
 ## Installation
 **Talk to @BotFather on Telegram**
